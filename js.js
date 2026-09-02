@@ -167,4 +167,94 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-  
+  // video cưới - nhúng YouTube, tự phát (tắt tiếng) khi cuộn tới
+// và tự dừng/phát lại nhạc nền theo trạng thái phát của video
+let ytPlayer = null;
+let ytAutoStarted = false;
+let ytVideoInView = false;
+let ytUserInteracted = false; // đã có thao tác thật của người dùng trên trang chưa
+
+function onYouTubeIframeAPIReady() {
+    const target = document.getElementById('yt-video');
+    if (!target) return;
+
+    ytPlayer = new YT.Player('yt-video', {
+        videoId: '26uBc2wTu2g',
+        playerVars: {
+            rel: 0,
+            playsinline: 1,
+            mute: 1
+        },
+        events: {
+            onReady: function (event) {
+                event.target.setVolume(100);
+                // nếu người dùng đã từng tương tác với trang trước khi video sẵn sàng
+                // thì bật tiếng luôn (trình duyệt cho phép vì đã có thao tác thật)
+                if (ytUserInteracted) {
+                    event.target.unMute();
+                }
+                if (ytVideoInView && !ytAutoStarted) {
+                    ytPlayer.playVideo();
+                    ytAutoStarted = true;
+                }
+            },
+            onStateChange: onPlayerStateChange
+        }
+    });
+}
+
+// chỉ bật tiếng video SAU KHI có thao tác thật (click/cuộn/chạm...) của người dùng,
+// vì trình duyệt luôn ép về 0 nếu bật tiếng tự động mà chưa có tương tác nào
+function unlockYtVolume() {
+    if (ytUserInteracted) return;
+    ytUserInteracted = true;
+
+    if (ytPlayer && typeof ytPlayer.unMute === 'function') {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+    }
+
+    ['click', 'scroll', 'touchstart', 'mousemove', 'keydown'].forEach(evt => {
+        window.removeEventListener(evt, unlockYtVolume);
+        document.removeEventListener(evt, unlockYtVolume);
+    });
+}
+
+['click', 'scroll', 'touchstart', 'mousemove', 'keydown'].forEach(evt => {
+    window.addEventListener(evt, unlockYtVolume);
+    document.addEventListener(evt, unlockYtVolume);
+});
+
+function onPlayerStateChange(event) {
+    const audio = document.getElementById('myAudio');
+    if (!audio) return;
+
+    if (event.data === YT.PlayerState.PLAYING) {
+        // video đang phát -> dừng nhạc nền web để nghe nhạc/âm thanh của video
+        audio.pause();
+    } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+        // video dừng hoặc kết thúc -> tự động phát lại nhạc nền
+        audio.play().catch(() => {});
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const videoWrap = document.querySelector('.video_wrap');
+    if (!videoWrap) return;
+
+    const videoObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                ytVideoInView = true;
+
+                if (ytPlayer && typeof ytPlayer.playVideo === 'function' && !ytAutoStarted) {
+                    ytPlayer.playVideo();
+                    ytAutoStarted = true;
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    videoObserver.observe(videoWrap);
+});

@@ -227,6 +227,42 @@ animation: flash-shadow 2s infinite;
     opacity: 0;
 }
 
+/* video cưới.................................................................... */
+.video_container {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+}
+
+.video_wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s ease-out;
+}
+
+.video_wrap.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.video_wrap iframe,
+.video_wrap > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 /* thank................................................................................... */
 
 .thank_container {
