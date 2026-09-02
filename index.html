@@ -20,8 +20,6 @@
 
     <link rel="preload" as="image" href="./source/doc/back_thiep.jpg" />
     <link rel="preload" as="audio" href="./source/music.mp3" type="audio/mpeg" />
-    <link rel="preload" as="image" href="./source/doc/cam_anh.svg" />
-    <link rel="preload" as="image" href="./source/doc/xanh_chi.svg" />
 
 
 </head>
@@ -66,7 +64,7 @@
                       <div class="thiep_main_date">20</div>
                       <div class="thiep_item">
                         <hr>
-                        <span class="padding_hour">11H00</span>
+                        <span class="padding_hour">11H30</span>
                         <hr>
                       </div>
                     </div>
@@ -83,31 +81,63 @@
                 </div>
 
                 <!-- phần icon -->
-                <div class="thiep_all_icon">
-                    <a class="thiep_map" href="https://maps.app.goo.gl/2NqGVe33ZQEvkue18">
-                        <img src="./source/pin_map.svg" alt="">
-                    </a>
-                </div>
-                    
-                
+                <a class="thiep_map_btn font_montserrat" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/2NqGVe33ZQEvkue18">
+                    <img src="./source/pin_map.svg" alt="">
+                    <p>Google Maps</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hai gia đình -->
+    <div class="gt_container family_container">
+        <div class="gt_des font_montserrat">Lễ Tân Hôn</div>
+        <div class="gt_des2 font_thanh_dam">Hai Gia Đình</div>
+
+        <div class="family_wrap">
+            <div class="family_card">
+                <p class="family_side font_fancy">Nhà Trai</p>
+                <p class="family_name font_thanh_dam">Ông: Kiều Văn Tụ</p>
+                <p class="family_name font_thanh_dam">Bà: Đặng Thị Hằng</p>
+                <p class="family_addr">Địa chỉ: Thôn Thạch Thất, xã Tân Hà Lâm Hà, tỉnh Lâm Đồng</p>
             </div>
 
+            <div class="side_divider"><span class="font_fancy">&amp;</span></div>
+
+            <div class="family_card">
+                <p class="family_side font_fancy">Nhà Gái</p>
+                <p class="family_name font_thanh_dam">Ông: Phạm Ngọc Kha</p>
+                <p class="family_name font_thanh_dam">Bà: Nguyễn Thị Mai</p>
+                <p class="family_addr">Địa chỉ: Thôn Đạ Sa, xã Tân Hà Lâm Hà, tỉnh Lâm Đồng</p>
+            </div>
         </div>
-    
     </div>
 
     <div class="gt_container">
         <div class="gt_des font_montserrat"> Giới thiệu </div>
         <div class="gt_des2 font_thanh_dam"> Chú Rể và Cô Dâu </div>
-        <div class="gt_img">
-            <img src="./source/re.jpg" alt="">
-            <!-- <p class="caption font_thanh_dam">Kiều Đoàn</p> -->
-        </div>
-        <div class="gt_img">
-            <img src="./source/dau.jpg" alt="">
-            <!-- <p class="caption font_thanh_dam">Phạm Giàu</p> -->
-        </div>
 
+        <div class="couple_wrap">
+            <div class="couple_card">
+                <div class="gt_img">
+                    <img src="./source/re.jpg" alt="Chú rể Kiều Đoàn">
+                </div>
+                <p class="couple_role font_fancy">Chú Rể</p>
+                <p class="couple_name font_thanh_dam">Kiều Đoàn</p>
+                <p class="couple_rank">Quý Nam</p>
+            </div>
+
+            <div class="side_divider"><span class="font_fancy">&amp;</span></div>
+
+            <div class="couple_card">
+                <div class="gt_img">
+                    <img src="./source/dau.jpg" alt="Cô dâu Phạm Giàu">
+                </div>
+                <p class="couple_role font_fancy">Cô Dâu</p>
+                <p class="couple_name font_thanh_dam">Phạm Giàu</p>
+                <p class="couple_rank">Út Nữ</p>
+            </div>
+        </div>
     </div>
 
 
@@ -116,9 +146,9 @@
         <div class="moi_desc1 font_fancy">Thư mời</div>
         <div class="moi_desc2 font_tnr">Tham dự Lễ cưới của Kiều Đoàn & Phạm Giàu</div>
         <div class="moi_img">
-            <img class="img_small js_l js_left" src="./source/doc/trang_1.jpg" alt="">
+            <img class="img_small js_left" src="./source/doc/trang_1.jpg" alt="">
             <img class="img_big js_center" src="./source/doc/trang_4.jpg" alt="">
-            <img class="img_small js_r js_right" src="./source/doc/trang_3.jpg" alt="">            
+            <img class="img_small js_right" src="./source/doc/trang_3.jpg" alt="">            
         </div>
 
         <div class="moi_desc3 font_tnr">   Tình yêu là nguồn sáng soi rọi mọi khoảnh khắc. 
@@ -131,33 +161,15 @@
     <!-- confirm -->
     <div class="cf_container nhay-shadow">
         <div class="cf_desc1">Lễ Tân Hôn</div>
-        <div class="cf_desc2">Chủ Nhật | 11h00</div>
+        <div class="cf_desc2">Chủ Nhật | 11H30</div>
         <div class="cf_desc3">20.09.2026</div>
         <div class="cf_desc4">(Tức Ngày 10 Tháng 08 Năm Bính Ngọ)</div>
         <!-- <button class="cf_btn font_tnr">
             <a href="https://forms.gle/7zeeJpgnDbF1wN2F8">Xác nhận tham dự</a>
-        </button>
-        <button class="cf_btn js_qr font_tnr">
-            Gửi quà mừng
         </button> -->
     </div>
     
-    <!-- pop-up -->
-    <div class="popup">
-        <div class="popup_container hide-horizontal-scrollbar">
-            <div class="popup_item popup_item1">
-                <img src="./source/ngang/qr_anh.svg" alt="">
-                <div class="copy copy_anh" data-copy="107877815585"></div>
-            </div>
-            <div class="popup_item popup_item2">
-                <img src="./source/ngang/qr_chi.svg" alt="">
-                <div class="copy copy_chi" data-copy="3624205122197"></div>
-            </div>
-        </div>
-    </div>
     <!-- album -->
-    <div id="copy-toast">Đã copy!</div>
-
     <div class="album_header">
         <span>Album ảnh cưới</span>
         <div class="line"></div>
@@ -184,11 +196,11 @@
         
         <div class="thank_desc">
             <img src="./source/thank.svg" alt="">
-            <p>Rất hân hạnh được đón tiếp!</p>
+            <p>Sự hiện diện của Quý khách </p>
+            <p>là niềm vinh dự lớn nhất đối với chúng tôi!</p>
         </div>
         <div class="footter">
             © 09/2026 Website by Kieu Van Doan | 
-            <!-- <a href="https://thiepcuoitienlan.id.vn/" class="footer-link" target="_blank" rel="noopener noreferrer">thiepcuoitienlan.id.vn</a> -->
         </div>
     </div>
     
@@ -199,90 +211,22 @@
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         const items = document.querySelectorAll('.thiep_item');
-    const container = document.querySelector('.thiep_date_box');
-    if (items.length === 2 && container) {
-      const left = items[0].getBoundingClientRect().left;
-      const right = items[1].getBoundingClientRect().right;
-      const containerLeft = container.getBoundingClientRect().left;
-      const width = right - left;
+        const container = document.querySelector('.thiep_date_box');
+        if (items.length === 2 && container) {
+            const left = items[0].getBoundingClientRect().left;
+            const right = items[1].getBoundingClientRect().right;
+            const containerLeft = container.getBoundingClientRect().left;
+            const width = right - left;
 
-      const hr = document.querySelector('.hr-wrapper');
-      hr.style.width = width + 'px';
-      hr.style.left = (left - containerLeft) + 'px';
-      hr.style.transform = 'none';
+            const hr = document.querySelector('.hr-wrapper');
+            hr.style.width = width + 'px';
+            hr.style.left = (left - containerLeft) + 'px';
+            hr.style.transform = 'none';
 
-      const hr_add = document.querySelector('.hr-add');
-      hr_add.style.width = width + 'px';
-      hr_add.style.left = (left - containerLeft) + 'px';
-      hr_add.style.transform = 'none';
-      }
+            const hr_add = document.querySelector('.hr-add');
+            hr_add.style.width = width + 'px';
+            hr_add.style.left = (left - containerLeft) + 'px';
+            hr_add.style.transform = 'none';
+        }
     });
-
-    const btn_qr = document.querySelector('.js_qr')
-    const pop_up = document.querySelector('.popup')
-    const pop_up_ctn = document.querySelector('.popup_container')
-    const pop_up_item1 = document.querySelector('.popup_item1')
-    const pop_up_item2 = document.querySelector('.popup_item2')
-
-    function show_pop_up() {
-        pop_up.classList.add('show')
-    }
-
-    function hide_pop_up() {
-        pop_up.classList.remove('show')
-    }
-
-    btn_qr.addEventListener('click', show_pop_up)
-    pop_up.addEventListener('click', hide_pop_up)
-    pop_up_item1.addEventListener('click', function(event) {
-        event.stopPropagation();
-    })
-    pop_up_item2.addEventListener('click', function(event) {
-        event.stopPropagation();
-    })
-
-
-    // xử lý kích thước pop up
-    const items = document.querySelectorAll('.popup_item');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const ratio = entry.intersectionRatio; // 0 -> 1
-            const value = 0.8 + 0.2 * ratio; // map từ 0.5 -> 1
-            entry.target.style.opacity = value.toFixed(2);
-            entry.target.style.transform = `scale(${value.toFixed(2)})`;
-        });
-    }, {
-        root: document.querySelector('.popup_container'),
-        threshold: Array.from({ length: 101 }, (_, i) => i / 100)
-    });
-
-    items.forEach(item => observer.observe(item));
-
-
-    // copyyyyyyyyyyy
-    function showToast() {
-        const toast = document.getElementById('copy-toast');
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 1000);   
-    }
-
-    document.querySelectorAll('.copy').forEach(copyBtn => {
-        copyBtn.addEventListener('click', function () {
-            const text = this.dataset.copy;
-            navigator.clipboard.writeText(text).then(() => {
-                showToast();
-            console.log(`Đã copy: ${text}`);
-            }).catch(err => {
-            console.error('Copy thất bại: ', err);
-            });
-        });
-    });
-
-
-
-
 </script>
-  

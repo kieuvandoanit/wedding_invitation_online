@@ -5,14 +5,6 @@
     /* font-size: 36px; */
 }
 
-
-.font_newsreader {
-    font-family: "Newsreader", serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
-
 .font_tnr {
     font-family: 'Times New Roman', Times, serif;
 }
@@ -119,7 +111,7 @@ body {
     width: 92%;
     margin: 4%;
     border-radius: 20px;
-    background: #7d7d7d45;
+    background: #07070745;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     color: white;
@@ -266,31 +258,38 @@ body {
     border: none;
 }
 
-.thiep_all_icon {
-    display: block;
-    margin: 16px 0;
-}
-
-.thiep_map {
-    display: block; /* Đảm bảo ảnh nền hiển thị */
-    width: 16px;
-    height: 16px;
-    display: flex;
-    justify-content: center;
+.thiep_map_btn {
+    display: inline-flex;
     align-items: center;
-    border: 1px solid white;
-    border-radius: 50%;
-    padding: 12px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 8px;
+    margin: 22px auto 6px;
+    padding: 10px 24px;
+    width: fit-content;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
 }
 
-.thiep_map:hover {
-    border: 1px solid rgb(125, 125, 125);
+.thiep_map_btn img {
+    width: 15px;
+    height: 15px;
+    display: block;
 }
 
-.thiep_map > img {
-    width: 16px;
-    height: 16px;
+.thiep_map_btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
 /* Giới thiệu */
@@ -334,19 +333,6 @@ body {
     display: block;
 }
 
-/* .caption {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 1px 1px 4px black;
-    z-index: 1;
-} */
-
-
 /* ani 2 ảnh.................................................................... */
 @keyframes fadeInUp {
     from {
@@ -368,5 +354,132 @@ body {
 
 .gt_img.show {
     animation: fadeInUp 1.8s ease forwards;
+}
+
+/* Chú rể & Cô dâu ................................................................ */
+.couple_wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.couple_card {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.couple_card .gt_img {
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 14px;
+}
+
+.couple_card .gt_img img {
+    border-radius: 14px;
+}
+
+.couple_role {
+    font-size: 25px;
+    color: #712f00;
+    margin-bottom: 2px;
+}
+
+.couple_name {
+    font-size: 30px;
+    color: #2b2b2b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.couple_rank {
+    margin-top: 4px;
+    font-size: 15px;
+    font-style: italic;
+    color: #725627;
+}
+
+/* Hai gia đình.................................................................... */
+.family_wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: 92%;
+    margin: 10px auto 0;
+}
+
+.family_card {
+    flex: 1;
+    min-width: 0;
+    padding: 18px 10px;
+    text-align: center;
+    background: #fffdf8;
+    border-top: 1px solid #c9a875;
+    border-bottom: 1px solid #c9a875;
+}
+
+.family_side {
+    font-size: 30px;
+    color: #712f00;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.family_name {
+    font-size: 16px;
+    color: #2b2b2b;
+    line-height: 20px;
+}
+
+.family_addr {
+    margin-top: 6px;
+    font-size: 11px;
+    font-style: italic;
+    color: #725627;
+    line-height: 15px;
+}
+
+/* Divider dùng chung (Nhà Trai|Nhà Gái, Chú Rể|Cô Dâu) .......................... */
+.side_divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+}
+
+.side_divider::before,
+.side_divider::after {
+    content: "";
+    width: 1px;
+    flex: 1;
+    background: #c9a875;
+}
+
+.side_divider span {
+    padding: 8px 0;
+    font-size: 18px;
+    color: #712f00;
+}
+
+/* hiệu ứng vào khi cuộn tới */
+.family_container {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.4s ease-in-out;
+}
+
+.family_container.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 

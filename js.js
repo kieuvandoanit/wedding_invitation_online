@@ -70,6 +70,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// hai gia đình
+document.addEventListener('DOMContentLoaded', () => {
+    const familyContainer = document.querySelector('.family_container');
+
+    if (familyContainer) {
+        const observerFamily = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observerFamily.observe(familyContainer);
+    }
+});
+
+
+
+
 // ani album
 window.addEventListener('scroll', () => 
 {
